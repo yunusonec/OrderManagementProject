@@ -9,6 +9,6 @@ namespace OrderManagementSignalR.BusinessLayer.Abstract
 {
     public interface IFeatureService : IGenericService<Feature>
     {
-        ,
+        
     }
 }
