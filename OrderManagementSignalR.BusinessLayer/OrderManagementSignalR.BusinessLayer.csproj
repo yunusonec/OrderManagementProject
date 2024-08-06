@@ -10,4 +10,8 @@
     <ProjectReference Include="..\OrderManagementSignalR.DataAccessLayer\OrderManagementSignalR.DataAccessLayer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Concrete\" />
+  </ItemGroup>
+
 </Project>
