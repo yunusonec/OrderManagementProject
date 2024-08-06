@@ -1,4 +1,5 @@
-﻿namespace OrderManagementSignalR.EntityLayer.Entities
+﻿namespace OrderManagementSignalR.EntityLayer.Entities 
+{
     public class Discount
     {
         public int DiscountID { get; set; }
