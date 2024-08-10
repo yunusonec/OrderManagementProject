@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OrderManagementSignalR.DtoLayer.ProductManager
+namespace OrderManagementSignalR.DtoLayer.ProductDto
 {
     public class ResultProductDto
     {

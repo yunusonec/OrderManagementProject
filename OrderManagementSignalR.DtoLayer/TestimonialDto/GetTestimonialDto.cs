@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OrderManagementSignalR.DtoLayer.TestimonialDto
 {
-    public class GetTostimonialDto
+    public class GetTestimonialDto
     {
         public int TestimonialID { get; set; }
         public string Name { get; set; }
