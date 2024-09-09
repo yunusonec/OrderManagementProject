@@ -42,7 +42,7 @@ namespace OrderManagementSignalRApi.Controllers
         {
             var value = _contactService.TGetByID(id);
             _contactService.TDelete(value);
-            return Ok("İletişim Bilgisi Silindi");a
+            return Ok("İletişim Bilgisi Silindi");
         }
     }
 }
