@@ -44,5 +44,24 @@ namespace OrderManagementSignalRApi.Controllers
             _contactService.TDelete(value);
             return Ok("İletişim Bilgisi Silindi");
         }
+        [HttpGet("GetContact")]
+        public IActionResult GetContact(int id)
+        {
+            var value = _contactService.TGetByID(id);
+            return Ok(value);
+        }
+        [HttpPut]
+        public IActionResult UpdateContact(UpdateContactDto updateContactDto)
+        {
+            _contactService.TUpdate(new Contact()
+            {
+               ContactID  = updateContactDto.ContactID,
+               FooterDescription = updateContactDto.FooterDescription,
+               Location = updateContactDto.Location,    
+               Phone = updateContactDto.Phone,
+               Mail = updateContactDto.Mail,
+            });
+            return Ok("İletişim Bilgisi Güncellendi");
+        }
     }
 }
