@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\OrderManagementSignalR.DtoLayer\OrderManagementSignalR.DtoLayer.csproj" />
     <ProjectReference Include="..\OrderManagementSignalR.EntityLayer\OrderManagementSignalR.EntityLayer.csproj" />
   </ItemGroup>
 
