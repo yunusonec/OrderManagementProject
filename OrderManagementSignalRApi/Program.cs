@@ -3,6 +3,7 @@ using OrderManagementSignalR.BusinessLayer.Concrete;
 using OrderManagementSignalR.DataAccessLayer.Abstract;
 using OrderManagementSignalR.DataAccessLayer.Concrete;
 using OrderManagementSignalR.DataAccessLayer.EntityFramework;
+using OrderManagementSignalRApi.Hubs;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -71,5 +72,6 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+app.MapHub<SignalRHub>("/signalrhub");
 
 app.Run();
