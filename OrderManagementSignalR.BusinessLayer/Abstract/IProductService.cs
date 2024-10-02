@@ -11,6 +11,11 @@ namespace OrderManagementSignalR.BusinessLayer.Abstract
     {
         List<Product> TGetProductsWithCategories();
 
-        public int TProductCount();
+        int TProductCount();
+        int TProductCountByCategoryNameHamburger();
+        int TProductCountByCategoryNameDrink();
+        decimal TProductPriceAvg();
+        string TProductNameByMaxPrice();
+        string TProductNameByMinPrice();
     }
 }
