@@ -10,10 +10,22 @@ using System.Threading.Tasks;
 
 namespace OrderManagementSignalR.DataAccessLayer.EntityFramework
 {
-    public class EfOrderDal : GenericRepository<Order>,IOrderDal
+    public class EfOrderDal : GenericRepository<Order>, IOrderDal
     {
         public EfOrderDal(SignalRContext context) : base(context) 
         {
+        }
+
+        public int ActiveOrderCount()
+        {
+            using var context = new SignalRContext();
+            return context.Orders.Where(x=>x.OrderStatus == true).Count();
+        }
+
+        public int TotalOrderCount()
+        {
+            using var context = new SignalRContext();
+            return context.Orders.Count();
         }
     }
 }

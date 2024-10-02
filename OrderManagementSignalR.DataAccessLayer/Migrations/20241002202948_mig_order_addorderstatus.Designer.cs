@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OrderManagementSignalR.DataAccessLayer.Concrete;
 
@@ -11,9 +12,10 @@ using OrderManagementSignalR.DataAccessLayer.Concrete;
 namespace OrderManagementSignalR.DataAccessLayer.Migrations
 {
     [DbContext(typeof(SignalRContext))]
-    partial class SignalRContextModelSnapshot : ModelSnapshot
+    [Migration("20241002202948_mig_order_addorderstatus")]
+    partial class mig_order_addorderstatus
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -208,8 +210,8 @@ namespace OrderManagementSignalR.DataAccessLayer.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("OrderStatus")
-                        .HasColumnType("bit");
+                    b.Property<int>("OrderStatus")
+                        .HasColumnType("int");
 
                     b.Property<string>("TableNumber")
                         .IsRequired()
