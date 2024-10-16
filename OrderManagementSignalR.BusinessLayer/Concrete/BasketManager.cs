@@ -21,7 +21,7 @@ namespace OrderManagementSignalR.BusinessLayer.Concrete
 
         public void TAdd(Basket entity)
         {
-            throw new NotImplementedException();
+            _basketDal.Add(entity);
         }
 
         public List<ResultBasketListWithProductsDto> TGetBasketListByMenuTableWithProductName(int id)
