@@ -1,4 +1,5 @@
-﻿using OrderManagementSignalR.EntityLayer.Entities;
+﻿using OrderManagementSignalR.DtoLayer.BasketDto;
+using OrderManagementSignalR.EntityLayer.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +11,6 @@ namespace OrderManagementSignalR.DataAccessLayer.Abstract
     public interface IBasketDal : IGenericDal<Basket>
     {
         List<Basket> GetBasketByMenuTableNumber(int id);
+        List<Basket> GetBasketListByMenuTableWithProductName(int id);
     }
 }
