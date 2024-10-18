@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OrderManagementSignalR.BusinessLayer.Abstract;
+using OrderManagementSignalR.DtoLayer.NotificationDto;
+using OrderManagementSignalR.EntityLayer.Entities;
 
 namespace OrderManagementSignalRApi.Controllers
 {
@@ -28,6 +30,48 @@ namespace OrderManagementSignalRApi.Controllers
         public IActionResult GetAllNotificationByFalse()
         {
             return Ok(_notificationService.TGetAllNotificationByFalse());
+        }
+        [HttpPost]
+        public IActionResult CreateNotification(CreateNotificationDto createNotificationDto)
+        {
+            Notification notification = new Notification()
+            {
+                Description = createNotificationDto.Description,
+                Icon = createNotificationDto.Icon,
+                Status = false,
+                Type = createNotificationDto.Type,
+                Date = Convert.ToDateTime(DateTime.Now.ToShortDateString())
+            };
+            _notificationService.TAdd(notification);
+            return Ok("Ekleme İşlemi Başarıyla Yapıldı");
+        }
+        [HttpDelete]
+        public IActionResult DeleteNotification(int id)
+        {
+            var value = _notificationService.TGetByID(id);
+            _notificationService.TDelete(value);
+            return Ok("Bildirim Silindi");
+        }
+        [HttpGet("{id}")]
+        public IActionResult GetNotification(int id)
+        {
+            var value = _notificationService.TGetByID(id);
+            return Ok(value);
+        }
+        [HttpPut]
+        public IActionResult UpdateNotification(UpdateNotificationDto updateNotificationDto)
+        {
+            Notification notification = new Notification()
+            {
+                NotificationID = updateNotificationDto.NotificationID,
+                Description = updateNotificationDto.Description,
+                Icon = updateNotificationDto.Icon,
+                Status = updateNotificationDto.Status,
+                Type = updateNotificationDto.Type,
+                Date = updateNotificationDto.Date,
+            };
+            _notificationService.TUpdate(notification);
+            return Ok("Güncelleme İşlemi Başarıyla Yapıldı");
         }
     }
 }
