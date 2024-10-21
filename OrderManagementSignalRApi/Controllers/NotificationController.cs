@@ -45,7 +45,7 @@ namespace OrderManagementSignalRApi.Controllers
             _notificationService.TAdd(notification);
             return Ok("Ekleme İşlemi Başarıyla Yapıldı");
         }
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteNotification(int id)
         {
             var value = _notificationService.TGetByID(id);
@@ -72,6 +72,20 @@ namespace OrderManagementSignalRApi.Controllers
             };
             _notificationService.TUpdate(notification);
             return Ok("Güncelleme İşlemi Başarıyla Yapıldı");
+        }
+
+        [HttpGet("NotificationStatusChangeToFalse/{id}")]
+        public IActionResult NotificationStatusChangeToFalse(int id)
+        {
+            _notificationService.TNotificationStatusChangeToFalse(id);
+            return Ok("Güncelleme Yapıldı");
+        }
+
+        [HttpGet("NotificationStatusChangeToTrue/{id}")]
+        public IActionResult NotificationStatusChangeToTrue(int id)
+        {
+            _notificationService.TNotificationStatusChangeToTrue(id);
+            return Ok("Güncelleme Yapıldı");
         }
     }
 }
