@@ -55,7 +55,7 @@ namespace OrderManagementSignalRWebUI.Controllers
             return View();
         }
         [HttpGet]
-        public async Task<IActionResult> UpdateMenuTablet(int id)
+        public async Task<IActionResult> UpdateMenuTable(int id)
         {
             var client = _httpClientFactory.CreateClient();
             var responseMessage = await client.GetAsync($"https://localhost:7005/api/MenuTable/{id}");
