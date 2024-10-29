@@ -93,6 +93,7 @@ namespace OrderManagementSignalRApi.Hubs
             var values = _bookingService.TGetListAll();
             await Clients.All.SendAsync("ReceiveBookingList",values);
         }
+
         public async Task SendNotification()
         {
             var value = _notificationService.TNotificationCountByStatusFalse();
@@ -102,5 +103,10 @@ namespace OrderManagementSignalRApi.Hubs
             await Clients.All.SendAsync("ReceviceNotificationByFalse", notificationListByFalse);
         }
 
+        public async Task GetMenuTableStatus()
+        {
+            var value = _menuTableService.TGetListAll();
+            await Clients.All.SendAsync("ReceiveMenuTableStatus", value);
+        }
     }
 }
