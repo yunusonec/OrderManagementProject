@@ -34,6 +34,10 @@ namespace OrderManagementSignalRApi.Controllers
                 Mail = createContactDto.Mail,
                 Phone = createContactDto.Phone,
                 FooterDescription = createContactDto.FooterDescription,
+                FooterTitle = createContactDto.FooterTitle,
+                OpenDays = createContactDto.OpenDays,
+                OpenDaysDescription = createContactDto.OpenDaysDescription,
+                OpenHours = createContactDto.OpenHours,
             });
             return Ok("İletişim Bilgisi Eklendi");
         }
@@ -60,6 +64,10 @@ namespace OrderManagementSignalRApi.Controllers
                Location = updateContactDto.Location,    
                Phone = updateContactDto.Phone,
                Mail = updateContactDto.Mail,
+               FooterTitle = updateContactDto.FooterTitle,
+               OpenDays = updateContactDto.OpenDays,
+               OpenDaysDescription = updateContactDto.OpenDaysDescription,
+               OpenHours = updateContactDto.OpenHours,
             });
             return Ok("İletişim Bilgisi Güncellendi");
         }
