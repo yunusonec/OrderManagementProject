@@ -1,0 +1,10 @@
+﻿@model List<ResultSocialMediaDto>
+
+<div class="footer-social d-flex gap-2 justify-content-center">
+    @foreach (var item in Model)
+    {
+        <a href="@item.Url" class="rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; background-color: #333; color: white;">
+            <i class="@item.Icon" aria-hidden="true"></i>
+        </a>
+    }
+</div>
